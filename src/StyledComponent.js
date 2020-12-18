@@ -13,15 +13,14 @@ const Wrapper = styled.section`
 `;
 
 const Button = styled.button`
-  /* Adapt the colors based on primary prop */
-  background: ${(props) => (props.primary ? "palevioletred" : "white")};
-  color: ${(props) => (props.primary ? "white" : "palevioletred")};
-
+  display: inline-block;
+  color: palevioletred;
   font-size: 1rem;
   margin: 1rem;
   padding: 0.5rem 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
+  display: block;
 `;
 
 const TomatoButton = styled(Button)`
@@ -35,7 +34,12 @@ function StyledComponent() {
         <Title>Hello World!</Title>
       </Wrapper>
       <Button>Normal Button</Button>
-      <TomatoButton>Tomato Button</TomatoButton>
+      <Button as="a" href="https://github.com/seunghwako">
+        Link with Button styles
+      </Button>
+      <TomatoButton as="a" href="https://google.com">
+        Link with Tomato Button styles
+      </TomatoButton>
     </div>
   );
 }
